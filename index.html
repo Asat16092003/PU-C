@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CALC/OS — Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <div class="logo">CALC<span>/OS</span></div>
+  <div class="header-badge">v1.0.0 // CS YEAR 1</div>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('age', this)">AGE</button>
+  <button class="tab-btn"        onclick="switchTab('math', this)">MATH</button>
+</div>
+
+<!-- AGE PANEL -->
+<div class="panel active" id="panel-age">
+  <div class="age-card">
+    <p class="section-title">// <span>AGE</span> CALCULATOR</p>
+    <label>DATE OF BIRTH</label>
+    <input type="date" id="birthdate" max="" />
+    <button class="calc-btn" onclick="calcAge()">CALCULATE</button>
+    <div class="age-result" id="age-result">
+      <div class="age-main" id="age-years">— <span>years</span></div>
+      <div class="age-details">
+        <div class="age-detail-box">
+          <div class="age-detail-val" id="age-months">—</div>
+          <div class="age-detail-lbl">MONTHS</div>
+        </div>
+        <div class="age-detail-box">
+          <div class="age-detail-val" id="age-days-total">—</div>
+          <div class="age-detail-lbl">TOTAL DAYS</div>
+        </div>
+        <div class="age-detail-box">
+          <div class="age-detail-val" id="age-hours">—</div>
+          <div class="age-detail-lbl">HOURS</div>
+        </div>
+      </div>
+      <div class="bday-row" id="bday-countdown"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MATH PANEL -->
+<div class="panel" id="panel-math">
+  <div class="math-card">
+    <div class="display-wrap">
+      <div class="display-scanline"></div>
+      <div class="display-expr" id="expr"></div>
+      <div class="display-val"  id="display">0</div>
+    </div>
+    <div class="keypad">
+      <button class="key fn" onclick="clearAll()">AC</button>
+      <button class="key fn" onclick="toggleSign()">+/−</button>
+      <button class="key fn" onclick="percent()">%</button>
+      <button class="key op" onclick="setOp('/')">÷</button>
+
+      <button class="key" onclick="inp('7')">7</button>
+      <button class="key" onclick="inp('8')">8</button>
+      <button class="key" onclick="inp('9')">9</button>
+      <button class="key op" onclick="setOp('*')">×</button>
+
+      <button class="key" onclick="inp('4')">4</button>
+      <button class="key" onclick="inp('5')">5</button>
+      <button class="key" onclick="inp('6')">6</button>
+      <button class="key op" onclick="setOp('-')">−</button>
+
+      <button class="key" onclick="inp('1')">1</button>
+      <button class="key" onclick="inp('2')">2</button>
+      <button class="key" onclick="inp('3')">3</button>
+      <button class="key op" onclick="setOp('+')">+</button>
+
+      <button class="key zero" onclick="inp('0')">0</button>
+      <button class="key" onclick="inputDot()">.</button>
+      <button class="key eq"  onclick="evaluate()">=</button>
+    </div>
+  </div>
+</div>
+
+<footer>BUILT WITH <span>♥</span> FOR GITHUB // CS PROJECT</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
